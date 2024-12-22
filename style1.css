@@ -1,0 +1,170 @@
+@import url(https://fonts.bunny.net/css?family=aladin:400|beau-rivage:400|estonia:400|kavivanar:400|monda:400,600);
+
+* {
+  box-sizing: border-box;
+}
+:root {
+  --clr-bg: rgb(237, 229, 215);
+  --duration: 700ms;
+  --delay: 1700ms;
+}
+
+body {
+  gap: 2rem;
+  background-color: var(--clr-bg);
+  font-family: "Estonia", handwriting;
+  padding: 1rem;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/backgrounds/bg-xmas-1.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.5;
+  z-index: -10;
+}
+h1 {
+  top: -50%;
+  font-family: "Estonia", handwriting;
+  font-size: clamp(3.4rem, 8.5vw - 0.05rem, 3rem);
+  
+  text-align: center;
+}
+
+.wrapper {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: min(300%, 800px);
+  display: grid;
+  place-content: center;
+  grid-template-areas: "stack";
+}
+.wrapper > * {
+  grid-area: stack;
+}
+.wrapper > svg {
+  width: 100%;
+  rotate: 90deg;
+}
+.wrapper > svg text {
+  font-size: 3rem;
+  stroke: rgb(60, 34, 6);
+}
+.wrapper > svg > g {
+  transition: opacity 500ms;
+  opacity: 0;
+  animation: fadeIn var(--duration) forwards;
+  animation-delay: calc(var(--i) * var(--delay));
+  transform-origin: center;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    rotate: -10deg;
+  }
+  to {
+    opacity: 1;
+    rotate: 0deg;
+  }
+}
+
+.wrapper > .images {
+  width: 35%;
+  aspect-ratio: 1;
+  margin: auto;
+  translate: -1em 1em;
+  display: grid;
+  grid-template-areas: "stack";
+}
+
+.wrapper > .images > img {
+  grid-area: stack;
+  width: 100%;
+  scale: 0;
+  transition: opacity 500ms ease-in-out;
+  animation: reveal-image calc(var(--duration) * 2) forwards;
+  animation-delay: calc(var(--i) * var(--delay) + 300ms);
+  border-radius: 20px;
+}
+.wrapper > .images > img:last-child {
+  translate: 1rem 0;
+  animation: reveal-image-last calc(var(--duration) * 2) forwards;
+  animation-delay: calc(var(--i) * var(--delay) + 300ms);
+}
+@keyframes reveal-image {
+  from {
+    scale: 0;
+  }
+  25%,
+  75% {
+    scale: 1;
+  }
+  to {
+    scale: 0;
+  }
+}
+@keyframes reveal-image-last {
+  from {
+    scale: 0;
+  }
+  25%,
+  100% {
+    scale: 1;
+  }
+}
+svg:has(:hover) + .images > img {
+  opacity: 0;
+  animation-duration: 0ms;
+}
+svg:has(g:nth-of-type(1):hover) ~ .images > img:nth-child(1),
+svg:has(g:nth-of-type(2):hover) ~ .images > img:nth-child(2),
+svg:has(g:nth-of-type(3):hover) ~ .images > img:nth-child(3),
+svg:has(g:nth-of-type(4):hover) ~ .images > img:nth-child(4),
+svg:has(g:nth-of-type(5):hover) ~ .images > img:nth-child(5),
+svg:has(g:nth-of-type(6):hover) ~ .images > img:nth-child(6),
+svg:has(g:nth-of-type(7):hover) ~ .images > img:nth-child(7),
+svg:has(g:nth-of-type(8):hover) ~ .images > img:nth-child(8),
+svg:has(g:nth-of-type(9):hover) ~ .images > img:nth-child(9),
+svg:has(g:nth-of-type(10):hover) ~ .images > img:nth-child(10),
+svg:has(g:nth-of-type(11):hover) ~ .images > img:nth-child(11),
+svg:has(g:nth-of-type(12):hover) ~ .images > img:nth-child(12) {
+  scale: 1 !important;
+  opacity: 1;
+}
+
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+    margin-top: 1rem;
+  }
+
+  p {
+    font-size: 1.5rem;
+  }
+
+  .wrapper {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+  }
+
+  .wrapper {
+    transform: scale(0.8);
+  }
+}

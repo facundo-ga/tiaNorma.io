@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Doce Buenos Deseos</title>
+  <link rel="stylesheet" href="./style1.css">
+  <link rel="icon" href="/1.png" type="image/x-icon">
+  <style>
+    /* Contenedor de las girnaldas */
+    #girnaldasContainer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none; /* Evita interferencias con el usuario */
+      overflow: hidden;
+      z-index: 10; /* Colocado por encima del contenido principal */
+    }
+  
+    .girnalda {
+      position: absolute;
+      top: -50px; /* Empieza fuera de la pantalla */
+      width: 20px; /* Ancho del círculo */
+      height: 20px; /* Altura del círculo */
+      border-radius: 50%; /* Hace que el elemento sea redondo */
+      animation: fall infinite linear, changeColor 2s infinite;
+    }
+  
+  
+
+    /* Animación de caída irregular */
+    @keyframes fall {
+      0% {
+        transform: translateY(-50px) translateX(0);
+      }
+      25% {
+        transform: translateY(25vh) translateX(-10px);
+      }
+      50% {
+        transform: translateY(50vh) translateX(20px);
+      }
+      75% {
+        transform: translateY(75vh) translateX(-15px);
+      }
+      100% {
+        transform: translateY(110vh) translateX(0);
+      }
+    }
+  
+    /* Animación de cambio de color */
+    @keyframes changeColor {
+      0% {
+        background-color: red;
+      }
+      25% {
+        background-color: yellow;
+      }
+      50% {
+        background-color: green;
+      }
+      75% {
+        background-color: blue;
+      }
+      100% {
+        background-color: red;
+      }
+    }
+  </style>
+  
+</head>
+<body>
+  <!-- Girnaldas que caen -->
+<div id="girnaldasContainer"></div>
+<!-- partial:index.partial.html -->
+<h1 style="font-size: 5.9rem; margin-top: 0.5cm;">¡Felices Fiestas! <br>Doce Buenos Deseos</h1>
+  <!-- Frase emotiva -->
+<p style="font-size: 5.9rem;margin-top: 0.3cm; margin-bottom: 2rem; text-align: center; color: #555;">
+  Para querida Tía Norma y  familia, que este mensaje llene sus corazones de amor.
+  
+</p>
+
+  <!-- Frase emotiva -->
+  <p style="font-size: 5.2rem;margin-top: 20cm; margin-bottom: 2rem; text-align: center; color: #555;">
+    <br>
+    <br>Les deseamos que este año reciban todo lo que anhelan y mucho más.
+    <!-- <br><strong>¡Feliz Navidad y Próspero Año Nuevo!</strong> -->
+       <h1 style="font-size: 5.9rem;"> ¡Feliz Navidad y Próspero Año Nuevo!</h1>
+      
+
+    
+  </p>
+
+<div class="wrapper" style="transform: scale(2.1);">
+  <svg width="500" height="500" viewBox="0 0 500 500" preserveAspectRatio="xMidYMid meet">
+    <path id="spiral" fill="transparent" stroke="transparent" d="M 150,150
+              m 0,120
+              a 120,120 0 1,0 240,0
+              a 140,140 0 1,0 -280,0
+              a 160,160 0 1,0 320,0
+              a 180,180 0 1,0 -360,0
+              a 200,200 0 1,0 400,0
+              a 220,220 0 1,0 -440,0" />
+    <g class="gift" style="--i: 1;opacity:0;">
+      <text>
+        <textPath href="#spiral" startOffset="0%" side="right">
+          Doce  de amor,
+        </textPath>
+      </text>
+    </g>
+    <g class="gift" style="--i:2;opacity:0;">
+      <text>
+        <textPath href="#spiral" startOffset="11%" side="right">
+          Once de esperanza,
+        </textPath>
+      </text>
+    </g>
+    <g class="gift" style="--i:3;opacity:0;">
+      <text>
+        <textPath href="#spiral" startOffset="18.75%" side="right">
+          Diez de salud,
+        </textPath>
+      </text>
+    </g>
+    <g class="gift" style="--i:4;opacity:0;">
+      <text>
+        <textPath href="#spiral" startOffset="26.5%" side="right">
+          Nueve de felicidad,
+        </textPath>
+      </text>
+    </g>
+    <g class="gift" style="--i:5;opacity:0;">
+      <text>
+        <textPath href="#spiral" startOffset="34.5%" side="right">
+          Ocho de gratitud,
+        </textPath>
+      </text>
+    </g>
+    <g class="gift" style="--i:6;opacity:0;">
+      <text>
+        <textPath href="#spiral" startOffset="43.25%" side="right">
+          Siete de prosperidad,
+        </textPath>
+      </text>
+    </g>
+    <g class="gift" style="--i:7;opacity:0;">
+      <text>
+        <textPath href="#spiral" startOffset="53.25%" side="right">
+          Seis de paz,
+        </textPath>
+      </text>
+    </g>
+    <g class="gift" style="--i:8;opacity:0;">
+      <text>
+        <textPath href="#spiral" startOffset="60.75%" side="right">
+          Cinco de alegría,
+        </textPath>
+      </text>
+    </g>
+    <g class="gift" style="--i: 9;opacity:0;">
+      <text>
+        <textPath href="#spiral" startOffset="67.5%" side="right">
+          Cuatro de sueños,
+        </textPath>
+      </text>
+    </g>
+    <g class="gift" style="--i:10; opacity:0;">
+      <text>
+        <textPath href="#spiral" startOffset="74.5%" side="right">
+          Tres de amistad,
+        </textPath>
+      </text>
+    </g>
+    <g class="gift" style="--i:11; opacity:0;">
+      <text>
+        <textPath href="#spiral" startOffset="81.5%" side="right">
+          Dos de unión,
+        </textPath>
+      </text>
+    </g>
+    <g class="gift" style="--i:12; opacity:0;">
+      <text>
+        <textPath href="#spiral" startOffset="88%" side="right">
+          Y uno de amor eterno.
+        </textPath>
+      </text>
+    </g>
+  </svg>
+
+  <div class="images">
+    <img src="https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/images/12-days-12-b.png" style="--i:1" alt="deseo 12">
+    <img src="https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/images/12-days-11-b.png" style="--i:2" alt="deseo 11">
+    <img src="https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/images/12-days-10.png" style="--i:3" alt="deseo 10">
+    <img src="https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/images/12-days-9-b.png" style="--i:4" alt="deseo 9">
+    <img src="https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/images/12-days-8.png" style="--i:5" alt="deseo 8">
+    <img src="https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/images/12-days-7.png" style="--i:6" alt="deseo 7">
+    <img src="https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/images/12-days-6.png" style="--i:7" alt="deseo 6">
+    <img src="https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/images/12-days-5-b.png" style="--i:8" alt="deseo 5">
+    <img src="https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/images/12-days-4.png" style="--i:9" alt="deseo 4">
+    <img src="https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/images/12-days-3-b.png" style="--i:10" alt="deseo 3">
+    <img src="https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/images/12-days-2.png" style="--i:11" alt="deseo 2">
+    <img src="https://raw.githubusercontent.com/cbolson/icodethis-challenges/main/assets/images/12-days-1-b.png" style="--i:12" alt="deseo 1">
+  </div>
+
+
+  <div style="position: top; margin-top: 12cm; bottom: 0; width: 100%; background-color: rgba(255, 255, 255, 0.181); padding: 20px; text-align: center; z-index: 20;">
+    <script>
+      setTimeout(function() {
+        alert('Reproduciendo villancicos 🎶 ¡Felices Fiestas tia! 🎶');
+      }, 15000);  // 15000 milisegundos = 15 segundos
+    </script>
+  </div>
+  
+  
+
+<script>
+
+  // Acción del botón de villancicos
+  const villancicosButton = document.getElementById('villancicosButton');
+  villancicosButton.addEventListener('click', () => {
+    // Aquí puedes iniciar la música o realizar otra acción
+    alert('Reproduciendo villancicos 🎶 ¡Felices Fiestas tia! 🎶');
+    // Por ejemplo, puedes agregar un audio:
+    const audio = new Audio('RAPHAEL EL NIÑO DEL TAMBOR (mp3cut.net).mp3');
+    audio.play();
+  });
+</script>
+
+
+</body>
+</html>
